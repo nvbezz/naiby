@@ -1,4 +1,7 @@
 export type * from './database'
+import type { Database } from './database'
+
+export type ProductoRow = Database['public']['Tables']['productos']['Row']
 
 export interface CartItem {
   producto_id: string
