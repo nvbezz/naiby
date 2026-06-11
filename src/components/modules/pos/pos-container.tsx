@@ -96,7 +96,7 @@ export function PosContainer({ productos, clientes, negocioId }: PosContainerPro
 
     const { error } = await supabase.rpc("registrar_venta", {
       p_negocio_id: negocioId,
-      p_cliente_id: clienteId,
+      p_cliente_id: clienteId ?? "",
       p_items: items,
       p_metodo_pago: metodoPago,
     })

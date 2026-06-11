@@ -27,7 +27,6 @@ export default async function PosPage() {
       .from("clientes")
       .select("id, nombre")
       .eq("negocio_id", negocio.id)
-      .eq("activo", true)
       .order("nombre"),
   ])
 
