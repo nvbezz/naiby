@@ -42,7 +42,7 @@ export default async function DashboardPage() {
   }
 
   const ventasSemana = ventasSemanaRes.data ?? []
-  const ventasHoy = (ventasHoyRes.data ?? []) as {
+  const ventasHoy = (ventasHoyRes.data ?? []) as unknown as {
     id: string
     total: number
     metodo_pago: string

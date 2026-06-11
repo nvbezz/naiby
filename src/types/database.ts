@@ -27,6 +27,7 @@ export interface Database {
           avatar_url?: string | null
           updated_at?: string
         }
+        Relationships: []
       }
       negocios: {
         Row: {
@@ -56,6 +57,7 @@ export interface Database {
           tipo_negocio?: string
           updated_at?: string
         }
+        Relationships: []
       }
       productos: {
         Row: {
@@ -97,6 +99,7 @@ export interface Database {
           activo?: boolean
           updated_at?: string
         }
+        Relationships: []
       }
       ventas: {
         Row: {
@@ -122,6 +125,7 @@ export interface Database {
           total?: number
           updated_at?: string
         }
+        Relationships: []
       }
       venta_items: {
         Row: {
@@ -140,7 +144,8 @@ export interface Database {
           precio_unitario: number
           created_at?: string
         }
-        Update: never
+        Update: Record<string, never>
+        Relationships: []
       }
       clientes: {
         Row: {
@@ -149,6 +154,7 @@ export interface Database {
           nombre: string
           telefono: string | null
           saldo_deuda: number
+          activo: boolean
           created_at: string
           updated_at: string
         }
@@ -158,6 +164,7 @@ export interface Database {
           nombre: string
           telefono?: string | null
           saldo_deuda?: number
+          activo?: boolean
           created_at?: string
           updated_at?: string
         }
@@ -165,8 +172,10 @@ export interface Database {
           nombre?: string
           telefono?: string | null
           saldo_deuda?: number
+          activo?: boolean
           updated_at?: string
         }
+        Relationships: []
       }
       fiados: {
         Row: {
@@ -192,6 +201,7 @@ export interface Database {
           pagado?: boolean
           updated_at?: string
         }
+        Relationships: []
       }
       gastos: {
         Row: {
@@ -218,8 +228,10 @@ export interface Database {
           monto?: number
           updated_at?: string
         }
+        Relationships: []
       }
     }
+    Views: Record<string, never>
     Functions: {
       registrar_venta: {
         Args: {
