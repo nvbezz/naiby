@@ -1,7 +1,5 @@
+import { RegisterForm } from "@/components/modules/auth/register-form"
+
 export default function RegisterPage() {
-  return (
-    <div className="flex min-h-screen items-center justify-center">
-      <p>Registro — próximamente</p>
-    </div>
-  )
+  return <RegisterForm />
 }
