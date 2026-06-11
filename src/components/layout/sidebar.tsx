@@ -14,11 +14,15 @@ const NAV_ITEMS = [
   { href: "/clientes", label: "Clientes", icon: Users },
 ]
 
-export function Sidebar() {
+interface SidebarProps {
+  className?: string
+}
+
+export function Sidebar({ className }: SidebarProps) {
   const pathname = usePathname()
 
   return (
-    <aside className="w-56 shrink-0 border-r bg-card flex flex-col">
+    <aside className={cn("w-56 shrink-0 border-r bg-card flex-col", className)}>
       <div className="px-5 py-4 border-b">
         <span className="text-lg font-bold text-primary">Naiby</span>
       </div>
