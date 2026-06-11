@@ -15,6 +15,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { formatCOPCompact } from "@/lib/utils"
 
 interface VentaSemana {
   dia: string
@@ -38,15 +39,6 @@ function formatDia(dateStr: string) {
   return date.toLocaleDateString("es-CO", { weekday: "short" })
 }
 
-function formatCOP(value: number) {
-  return new Intl.NumberFormat("es-CO", {
-    style: "currency",
-    currency: "COP",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-    notation: "compact",
-  }).format(value)
-}
 
 export function SalesChart({ data }: SalesChartProps) {
   const chartData = data.map((item) => ({
@@ -83,7 +75,7 @@ export function SalesChart({ data }: SalesChartProps) {
                 tickLine={false}
                 axisLine={false}
                 tick={{ fontSize: 11, fill: "var(--muted-foreground)" }}
-                tickFormatter={formatCOP}
+                tickFormatter={formatCOPCompact}
                 width={55}
               />
               <ChartTooltip
