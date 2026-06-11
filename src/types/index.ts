@@ -12,3 +12,18 @@ export interface CartItem {
 }
 
 export type MetodoPago = 'efectivo' | 'transferencia' | 'debito' | 'credito' | 'fiado'
+
+export interface VentaItem {
+  cantidad: number
+  precio_unitario: number
+  productos: { nombre: string } | null
+}
+
+export interface VentaConDetalle {
+  id: string
+  total: number
+  metodo_pago: MetodoPago
+  created_at: string
+  clientes: { nombre: string } | null
+  venta_items: VentaItem[]
+}
