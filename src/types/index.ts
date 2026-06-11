@@ -2,6 +2,8 @@ export type * from './database'
 import type { Database } from './database'
 
 export type ProductoRow = Database['public']['Tables']['productos']['Row']
+export type ClienteRow = Database['public']['Tables']['clientes']['Row']
+export type FiadoRow = Database['public']['Tables']['fiados']['Row']
 
 export interface CartItem {
   producto_id: string
